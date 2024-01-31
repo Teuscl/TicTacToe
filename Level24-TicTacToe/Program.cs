@@ -9,8 +9,7 @@ public class TicTacToeGame
         Player player1 = new Player('X');
         Player player2 = new Player('O');
         int round = 0;
-        int currentPlayer = 1; //1 represents player1('X'), 2 represents player2('O')
-        
+        int currentPlayer = 1;//1 represents player1('X'), 2 represents player2('O')        
 
         while(round < 9)
         {
@@ -63,7 +62,6 @@ public class TicTacToeGame
         }
 
         else return false;
-
     }
 }
 
@@ -116,6 +114,7 @@ public class Player
     }
 }
 
+
 public class Board
 {
     private readonly char[,] _fields = new char[3, 3];
@@ -131,10 +130,6 @@ public class Board
             }
         }
     }
-
-    public char[,] Fields => _fields;
-    public bool PositionIsEmpty(int row, int col) => _fields[row, col] != 'X' && _fields[row, col] != 'O';
-
     public void DrawBoard()
     {        
         Console.WriteLine($" {_fields[0, 0]}  | {_fields[0, 1]}  | {_fields[0, 2]}");
@@ -148,6 +143,7 @@ public class Board
         _fields[row, col] = symb;
     }
 
-    
+    public char[,] Fields => _fields;
+    public bool PositionIsEmpty(int row, int col) => _fields[row, col] != 'X' && _fields[row, col] != 'O';
 }
 
